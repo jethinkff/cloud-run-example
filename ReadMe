@@ -1,2 +1,12 @@
 //build and submit image
 gcloud builds submit --tag gcr.io/ca-dev-dp-f497d49f/cloud-run-example
+
+docker build -t gcr.io/ca-dev-dp-f497d49f/cloud-run-example .
+
+docker run -d -p 8080:8080 --name cloud-run-example gcr.io/ca-dev-dp-f497d49f/cloud-run-example
+
+docker push gcr.io/ca-dev-dp-f497d49f/cloud-run-example
+
+<!-- deploy directly to cloud run -->
+
+gcloud run deploy --source
